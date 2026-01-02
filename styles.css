@@ -388,6 +388,10 @@ main {
   z-index: 10;
 }
 
+.modal[hidden] {
+  display: none;
+}
+
 .modal-card {
   background: var(--card);
   color: var(--ink);
