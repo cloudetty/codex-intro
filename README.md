@@ -1,3 +1,3 @@
-# codex-intro
+# brodex-intro
 
-Intro repo for Codex.
+Intro repo for BroDex.
