@@ -3,205 +3,191 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BroDex — Your super-patient coding study buddy</title>
+    <title>BroDex — Apple-keynote style study buddy</title>
     <meta
       name="description"
-      content="BroDex (Codex intro) helps high school students learn programming faster: it explains the why, debugs with you, and turns ideas into step-by-step plans."
+      content="BroDex is a super-patient coding study buddy for high school students. Learn faster, debug smarter, and ship projects. Powered by Codex."
     />
     <meta property="og:title" content="BroDex" />
     <meta
       property="og:description"
-      content="A super-patient coding study buddy for high school projects."
+      content="A premium, teen-friendly coding study buddy with smooth guidance and real results."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page" data-theme="light">
-      <header class="nav">
-        <div class="logo">BroDex</div>
+    <div class="page" data-theme="auto">
+      <header class="top-nav">
+        <div class="brand">
+          <span class="logo">BroDex</span>
+          <span class="powered">Powered by Codex</span>
+        </div>
         <nav class="nav-links">
-          <a href="#features">Features</a>
           <a href="#use-cases">Use Cases</a>
           <a href="#how-it-works">How it Works</a>
+          <a href="#try-it">Try It</a>
           <a href="#faq">FAQ</a>
         </nav>
         <div class="nav-actions">
-          <button class="ghost" data-scroll="#use-cases">See use cases</button>
-          <button class="primary" data-open="try-modal">Try BroDex</button>
-          <button class="theme-toggle" aria-label="Theme" data-theme-toggle>
+          <a class="ghost" href="https://github.com/cloudetty/codex-intro" target="_blank" rel="noreferrer">
+            View on GitHub
+          </a>
+          <button class="primary" data-scroll="#try-it">Try BroDex</button>
+          <button class="theme-toggle" data-theme-toggle aria-label="Theme toggle">
             Theme
           </button>
         </div>
       </header>
 
       <main>
-        <section class="hero">
+        <section class="hero section reveal">
           <div class="hero-copy">
             <p class="eyebrow">BroDex</p>
             <h1>BroDex</h1>
-            <p class="lede">
-              Your super-patient coding study buddy.
-              <br />
+            <p class="hero-subhead">Your super-patient coding study buddy.</p>
+            <p class="hero-body">
               For AP CS. Robotics club. Science fairs. Weekend side quests.
-              <br />
               Ask anything. Get the why. Get examples. Get unstuck.
             </p>
             <div class="hero-actions">
-              <button class="primary" data-open="try-modal">Try BroDex</button>
-              <button class="ghost" data-scroll="#use-cases">See use cases</button>
-            </div>
-            <p class="microcopy">No ego. No judgment. Just progress.</p>
-            <div class="chips">
-              <span>Explains the why</span>
-              <span>Debugs with you</span>
-              <span>Turns ideas into steps</span>
+              <button class="primary" data-scroll="#try-it">Try BroDex</button>
+              <a class="ghost" href="https://github.com/cloudetty/codex-intro" target="_blank" rel="noreferrer">
+                View on GitHub
+              </a>
             </div>
           </div>
-          <div class="hero-art" aria-hidden="true">
-            <div class="orb"></div>
-            <div class="grid"></div>
-            <div class="badge">Study buddy mode</div>
-            <div class="avatar">
-              <div class="eye"></div>
-              <div class="eye"></div>
-              <div class="smile"></div>
+          <div class="hero-visual glass">
+            <div class="hero-image">
+              <img
+                src="https://source.unsplash.com/RdeKfL3w344/1600x900"
+                alt="Neon laptop with code"
+                loading="lazy"
+              />
+            </div>
+            <div class="hero-overlay">
+              <p>Explain any code like a tutor.</p>
+              <p>Debug with receipts, not vibes.</p>
             </div>
           </div>
         </section>
 
-        <section class="section" id="features">
-          <div class="section-head">
-            <p class="eyebrow">Features</p>
-            <h2>Built for learning. Not just answers.</h2>
-          </div>
-          <div class="grid cards">
-            <article class="card">
-              <h3>Explain it like I'm 16</h3>
-              <p>
-                Clear mental models, simple language, and examples that actually
-                stick.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Debug without spiraling</h3>
-              <p>
-                Paste your code + error. BroDex finds the bug, explains it, and
-                fixes it with you.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Project plans that ship</h3>
-              <p>
-                From vague idea to clean checklist to small steps you can finish
-                tonight.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Practice that levels you up</h3>
-              <p>
-                Mini-quizzes, follow-ups, and next problems that match your
-                skill.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="use-cases">
+        <section class="section reveal" id="use-cases">
           <div class="section-head">
             <p class="eyebrow">Use Cases</p>
-            <h2>Six ways BroDex saves your day.</h2>
-            <p class="hint">Tap a card to copy a prompt.</p>
+            <h2>Four moments where BroDex saves the day.</h2>
+            <p class="muted">Apple-keynote energy, teen-friendly clarity.</p>
           </div>
-          <div class="grid cards" data-use-cases>
-            <article class="case-card" data-modal="case-apcs">
-              <h3>AP CS Homework</h3>
-              <p>Understand the concept. Then do the work.</p>
+          <div class="grid cards">
+            <article class="card glass">
+              <img
+                src="https://source.unsplash.com/xWSUI7tpiTY/1600x900"
+                alt="Purple blue gradient"
+                loading="lazy"
+              />
+              <div>
+                <h3>Explain any code like a tutor</h3>
+                <p>Concepts click fast when the “why” is clear.</p>
+              </div>
             </article>
-            <article class="case-card" data-modal="case-debug">
-              <h3>Debugging Panic Button</h3>
-              <p>Find the bug. Learn the reason.</p>
+            <article class="card glass">
+              <img
+                src="https://source.unsplash.com/RdeKfL3w344/1600x900"
+                alt="Neon laptop"
+                loading="lazy"
+              />
+              <div>
+                <h3>Turn ideas into working projects</h3>
+                <p>From wild idea to step-by-step plan that ships tonight.</p>
+              </div>
             </article>
-            <article class="case-card" data-modal="case-data">
-              <h3>Science Fair Data + Graphs</h3>
-              <p>Turn data into a story.</p>
+            <article class="card glass">
+              <img
+                src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1600&q=80"
+                alt="Dark gradient light"
+                loading="lazy"
+              />
+              <div>
+                <h3>Debug with receipts (not vibes)</h3>
+                <p>Find the bug, fix the cause, learn the lesson.</p>
+              </div>
             </article>
-            <article class="case-card" data-modal="case-game">
-              <h3>Build a Game</h3>
-              <p>From idea to playable.</p>
-            </article>
-            <article class="case-card" data-modal="case-portfolio">
-              <h3>Personal Website / Portfolio</h3>
-              <p>Look legit. Fast.</p>
-            </article>
-            <article class="case-card" data-modal="case-robotics">
-              <h3>Robotics / Arduino Helper</h3>
-              <p>Sensors. Signals. Sanity.</p>
+            <article class="card glass">
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
+                alt="Desk with code"
+                loading="lazy"
+              />
+              <div>
+                <h3>Study smarter for CS class</h3>
+                <p>Short explanations, quick quizzes, and practice prompts.</p>
+              </div>
             </article>
           </div>
         </section>
 
-        <section class="section" id="how-it-works">
+        <section class="section reveal" id="how-it-works">
           <div class="section-head">
             <p class="eyebrow">How it Works</p>
-            <h2>Three steps to \"ohhhh... got it.\"</h2>
+            <h2>Three steps to “ohhhh… got it.”</h2>
           </div>
-          <div class="steps">
-            <article>
+          <div class="grid steps">
+            <article class="step glass">
               <h3>Tell BroDex the goal</h3>
-              <p>What you're building, what you tried, what's confusing.</p>
+              <p>What you’re building, what you tried, what’s confusing.</p>
             </article>
-            <article>
+            <article class="step glass">
               <h3>Pick a depth</h3>
-              <p>Quick (answer). Deep (teach me). Checklist (plan + steps).</p>
+              <p>Quick. Deep. Checklist. You choose the vibe.</p>
             </article>
-            <article>
+            <article class="step glass">
               <h3>Iterate until it clicks</h3>
-              <p>BroDex asks smart questions and adapts to you.</p>
+              <p>BroDex adapts, asks smart questions, and levels you up.</p>
             </article>
           </div>
         </section>
 
-        <section class="section cta">
-          <div>
-            <h2>Try BroDex in 30 seconds.</h2>
-            <p>One good prompt can save an entire evening.</p>
+        <section class="section reveal" id="try-it">
+          <div class="cta glass">
+            <div>
+              <p class="eyebrow">Try It</p>
+              <h2>Try BroDex in 30 seconds.</h2>
+              <p class="muted">
+                One good prompt can save an entire evening.
+              </p>
+            </div>
+            <div class="cta-actions">
+              <button class="primary" data-copy="try-prompt">Try BroDex</button>
+              <a class="ghost" href="https://github.com/cloudetty/codex-intro" target="_blank" rel="noreferrer">
+                View on GitHub
+              </a>
+            </div>
+            <textarea id="try-prompt" readonly>
+I’m a high school student. I’m working on ____. Explain the concept simply, show a small example, then give me a step-by-step plan. Ask me 3 questions to make the plan better.
+            </textarea>
           </div>
-          <button class="primary" data-open="try-modal">Try BroDex</button>
-          <p class="footnote">Built for GitHub Pages.</p>
         </section>
 
-        <section class="section" id="faq">
+        <section class="section reveal" id="faq">
           <div class="section-head">
             <p class="eyebrow">FAQ</p>
+            <h2>Quick answers.</h2>
           </div>
-          <div class="faq">
-            <details>
+          <div class="grid faq">
+            <details class="glass">
               <summary>Is BroDex for beginners?</summary>
-              <p>
-                Yes. It can explain like you're new, or go deep if you want the full
-                story.
-              </p>
+              <p>Yes. It can explain like you’re new or go deep if you want the full story.</p>
             </details>
-            <details>
+            <details class="glass">
               <summary>Will it just do my homework?</summary>
-              <p>
-                It can, but the magic is learning. Ask for explanations, hints, and
-                practice, not just the final code.
-              </p>
+              <p>It can, but the magic is learning. Ask for hints and explanations, not just final code.</p>
             </details>
-            <details>
-              <summary>What should I paste when I'm stuck?</summary>
-              <p>
-                Your goal, your code, the exact error, and what you already tried.
-              </p>
+            <details class="glass">
+              <summary>What should I paste when I’m stuck?</summary>
+              <p>Your goal, your code, the exact error, and what you already tried.</p>
             </details>
-            <details>
+            <details class="glass">
               <summary>What languages can it help with?</summary>
               <p>The common ones: Java, Python, JavaScript, C/C++, and more.</p>
-            </details>
-            <details>
-              <summary>How do I get better faster?</summary>
-              <p>End every chat with: "Give me 3 practice problems like this."</p>
             </details>
           </div>
         </section>
@@ -210,148 +196,6 @@
       <footer class="footer">
         <p>Built for GitHub Pages.</p>
       </footer>
-    </div>
-
-    <div class="modal" id="try-modal" role="dialog" aria-modal="true" hidden>
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3>Try BroDex</h3>
-          <p>Copy a starter prompt and go.</p>
-        </div>
-        <textarea readonly>
-I'm a high school student. I'm working on ____. Explain the concept simply, show a small example, then give me a step-by-step plan. Ask me 3 questions to make the plan better.
-        </textarea>
-        <div class="modal-actions">
-          <button class="primary" data-copy>Copy prompt</button>
-          <button class="ghost" data-close>Close</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="case-apcs" role="dialog" aria-modal="true" hidden>
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3>AP CS Homework</h3>
-          <p>You're not behind. You just need the right explanation.</p>
-        </div>
-        <textarea readonly>
-I'm in high school AP CS. Explain arrays vs ArrayLists like I'm 16. Then give me 3 practice problems with answers.
-        </textarea>
-        <ul>
-          <li>A simple explanation + analogy</li>
-          <li>Examples in the language you're using</li>
-          <li>Practice problems that ramp up</li>
-        </ul>
-        <div class="modal-actions">
-          <button class="primary" data-copy>Copy prompt</button>
-          <button class="ghost" data-close>Close</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="case-debug" role="dialog" aria-modal="true" hidden>
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3>Debugging Panic Button</h3>
-          <p>We fix it fast -- and you leave smarter than you arrived.</p>
-        </div>
-        <textarea readonly>
-Here's my code and error. Find the bug, explain why it happens, then show the smallest fix. After that, suggest one improvement.
-        </textarea>
-        <ul>
-          <li>Root cause in plain English</li>
-          <li>Minimal diff-style fix</li>
-          <li>One clean improvement (optional)</li>
-        </ul>
-        <div class="modal-actions">
-          <button class="primary" data-copy>Copy prompt</button>
-          <button class="ghost" data-close>Close</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="case-data" role="dialog" aria-modal="true" hidden>
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3>Science Fair Data + Graphs</h3>
-          <p>Data is only scary until it's plotted.</p>
-        </div>
-        <textarea readonly>
-I have a CSV with columns ____. Suggest 3 graphs that best show the story. Then write Python code to generate them and explain what each graph means.
-        </textarea>
-        <ul>
-          <li>3 recommended graphs (with reasoning)</li>
-          <li>Python code you can run</li>
-          <li>How to interpret the results</li>
-        </ul>
-        <div class="modal-actions">
-          <button class="primary" data-copy>Copy prompt</button>
-          <button class="ghost" data-close>Close</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="case-game" role="dialog" aria-modal="true" hidden>
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3>Build a Game</h3>
-          <p>Ship something fun. Then polish it.</p>
-        </div>
-        <textarea readonly>
-Help me design a simple game in JavaScript. Give a step-by-step plan, then implement a basic version. Keep it beginner-friendly.
-        </textarea>
-        <ul>
-          <li>A simple plan + milestones</li>
-          <li>Working starter code</li>
-          <li>Next upgrades to make it cooler</li>
-        </ul>
-        <div class="modal-actions">
-          <button class="primary" data-copy>Copy prompt</button>
-          <button class="ghost" data-close>Close</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="case-portfolio" role="dialog" aria-modal="true" hidden>
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3>Personal Website / Portfolio</h3>
-          <p>Clean layout. Great first impression.</p>
-        </div>
-        <textarea readonly>
-Create a 1-page student portfolio layout with sections: About, Projects, Awards, Contact. Generate the HTML/CSS and include a dark mode toggle.
-        </textarea>
-        <ul>
-          <li>One-page layout that looks modern</li>
-          <li>Responsive HTML/CSS</li>
-          <li>Dark mode ready</li>
-        </ul>
-        <div class="modal-actions">
-          <button class="primary" data-copy>Copy prompt</button>
-          <button class="ghost" data-close>Close</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="case-robotics" role="dialog" aria-modal="true" hidden>
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3>Robotics / Arduino Helper</h3>
-          <p>Hardware bugs are just software bugs wearing a trench coat.</p>
-        </div>
-        <textarea readonly>
-Explain what this Arduino code does line-by-line. Then suggest how to stabilize noisy sensor readings and show the updated code.
-        </textarea>
-        <ul>
-          <li>Line-by-line explanation</li>
-          <li>Noise reduction approach</li>
-          <li>Improved working code</li>
-        </ul>
-        <div class="modal-actions">
-          <button class="primary" data-copy>Copy prompt</button>
-          <button class="ghost" data-close>Close</button>
-        </div>
-      </div>
     </div>
 
     <script src="script.js"></script>

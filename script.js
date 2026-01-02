@@ -1,70 +1,80 @@
 const page = document.querySelector(".page");
 const themeToggle = document.querySelector("[data-theme-toggle]");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-const storedTheme = localStorage.getItem("brodex-theme");
-if (storedTheme) {
-  page.setAttribute("data-theme", storedTheme);
-} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  page.setAttribute("data-theme", "dark");
-}
+const setTheme = (mode) => {
+  page.setAttribute("data-theme", mode);
+  localStorage.setItem("brodex-theme", mode);
+};
+
+const initTheme = () => {
+  const stored = localStorage.getItem("brodex-theme");
+  if (stored) {
+    page.setAttribute("data-theme", stored);
+  } else {
+    page.setAttribute("data-theme", prefersDark.matches ? "dark" : "light");
+  }
+};
+
+initTheme();
+
+prefersDark.addEventListener("change", (event) => {
+  const stored = localStorage.getItem("brodex-theme");
+  if (!stored) {
+    page.setAttribute("data-theme", event.matches ? "dark" : "light");
+  }
+});
 
 themeToggle?.addEventListener("click", () => {
-  const next = page.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  page.setAttribute("data-theme", next);
-  localStorage.setItem("brodex-theme", next);
+  const current = page.getAttribute("data-theme");
+  setTheme(current === "dark" ? "light" : "dark");
 });
 
 document.querySelectorAll("[data-scroll]").forEach((button) => {
   button.addEventListener("click", () => {
-    const target = document.querySelector(button.getAttribute("data-scroll"));
+    const target = document.querySelector(button.dataset.scroll);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
   });
 });
 
-const openModal = (id) => {
-  const modal = document.getElementById(id);
-  if (modal) {
-    modal.hidden = false;
-  }
-};
+document.querySelectorAll("[data-copy]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const id = button.dataset.copy;
+    const target = document.getElementById(id);
+    if (!target) return;
 
-const closeModal = (modal) => {
-  modal.hidden = true;
-};
-
-document.querySelectorAll("[data-open]").forEach((button) => {
-  button.addEventListener("click", () => openModal(button.dataset.open));
-});
-
-document.querySelectorAll(".case-card").forEach((card) => {
-  card.addEventListener("click", () => openModal(card.dataset.modal));
-});
-
-document.querySelectorAll(".modal").forEach((modal) => {
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      closeModal(modal);
+    try {
+      await navigator.clipboard.writeText(target.value.trim());
+      const original = button.textContent;
+      button.textContent = "Copied!";
+      setTimeout(() => {
+        button.textContent = original;
+      }, 1400);
+    } catch (error) {
+      button.textContent = "Copy failed";
     }
   });
-
-  modal.querySelectorAll("[data-close]").forEach((button) => {
-    button.addEventListener("click", () => closeModal(modal));
-  });
-
-  modal.querySelectorAll("[data-copy]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const text = modal.querySelector("textarea")?.value ?? "";
-      try {
-        await navigator.clipboard.writeText(text.trim());
-        button.textContent = "Copied!";
-        setTimeout(() => {
-          button.textContent = "Copy prompt";
-        }, 1400);
-      } catch (error) {
-        button.textContent = "Copy failed";
-      }
-    });
-  });
 });
+
+const revealElements = document.querySelectorAll(".reveal");
+const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (prefersReduced.matches) {
+  revealElements.forEach((el) => el.classList.add("is-visible"));
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
+}
